@@ -10,12 +10,12 @@ def start(message):
     btn2 = types.KeyboardButton("❓ Задать вопрос")
     btn3 = types.KeyboardButton('Расскажи рассказ')
     markup.add(btn1, btn2, btn3)
-    bot.send_message(message.chat.id, text="Привет, {0.first_name}! Я тестовый бот ".format(message.from_user), reply_markup=markup)
+    bot.send_message(message.chat.id,text="Привет, {0.first_name}! спасибо, что общаешься со мной!) ".format(message.from_user)), reply_markup=markup)
     
 @bot.message_handler(content_types=['text'])
 def func(message):
     if(message.text == "👋 Поздороваться"):
-        bot.send_message(message.chat.id, text="Привеет.. Спасибо что общаешься со мной!)")
+        bot.send_message(message.chat.id,text="Привет, {0.first_name}! спасибо, что общаешься со мной!) ".format(message.from_user))
     elif(message.text == "❓ Задать вопрос"):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton("Как тебя зовут?")
